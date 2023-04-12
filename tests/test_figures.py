@@ -59,4 +59,5 @@ def test_rectangle_add_triangle_area():
 
 
 def test_create_impossible_triangle():
-    assert Triangle(1, 1, 3), "Can not create triangle with these attributes"
+    with pytest.raises(ValueError):
+        assert Triangle(1, 1, 3), "triangle with these attributes is actually valid"
