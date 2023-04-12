@@ -10,13 +10,15 @@ class Triangle(Figure):
             self.y = y
             self.z = z
         else:
-            raise AttributeError('the sum of any two triangle sides should be higher than third one')
+            raise ValueError('the sum of any two triangle sides should be higher than third one')
 
     # def __new__(cls, x, y, z):
     #     if x + y > z and x + z > y and y + z > x:
-    #         cls.x = x
-    #         cls.y = y
-    #         cls.z = z
+    #        triangle = super(Triangle, cls).__new__(cls)
+    #        triangle.x = x
+    #        triangle.y = y
+    #        triangle.z = z
+    #        return triangle
     #     else:
     #         return None
 
