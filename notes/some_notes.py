@@ -1,3 +1,6 @@
+from re import split
+
+
 def factorial(n):
     """
     Факториал числа - умножение всех чисел до выбранного числа
@@ -17,7 +20,7 @@ def list_comprehension():
     """
     Генератор списков (упрощенная форма цикла for)
     """
-    a = [i*i for i in range(10)]
+    a = [i * i for i in range(10)]
     # return a
     print(a)
 
@@ -36,14 +39,26 @@ def gen(n):
     for i in range(n):
         yield i
 
+
 # gen(7)
 
 
 """
 lambda func
 """
-double = lambda x: x*2
+double = lambda x: x * 2
 multiply = lambda x, y: x * y
-square = lambda x: x*x
+square = lambda x: x * x
 
 # print(multiply(4, 8))
+
+"""
+splitting
+"""
+
+
+def split_sentence_word_by_word(word_index: int):
+    sentence = 'У меня есть самый надежный и лучший друг на свете'
+    print(sentence.split(' ')[word_index])
+
+# split_sentence_word_by_word(4)
