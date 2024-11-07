@@ -44,9 +44,12 @@ def unpacking_args(*args):
     print(f'Длина аргумента == {len(args)}')
     print(f'Значение аргумента == {args}')
 
-l = [1, 2, 3] # list
-m = 4, 5, 6 # tuple
+
+l = [1, 2, 3]  # list
+m = 4, 5, 6  # tuple
 f = range(3)
+
+
 # unpacking_args(l) # передается лишь один аргумент - список или кортеж (со всеми своими значениями)
 # unpacking_args(*l) # список или кортеж распаковывается и передаются все его значения
 # unpacking_args(f)
@@ -56,9 +59,11 @@ f = range(3)
 def unpacking_kwargs(x, y, z, w):
     print(x, y, z, w)
 
-d = {'x':1, 'y':2, 'z':'stringVal', 'w': []}
+
+d = {'x': 1, 'y': 2, 'z': 'stringVal', 'w': []}
 
 unpacking_kwargs(**d)
+
 
 def any_args_action_sum(*args: int):
     sum = 0
