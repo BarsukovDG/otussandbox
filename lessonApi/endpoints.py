@@ -11,3 +11,14 @@ def get_dog_endpoints(breed='hound'):
         'browse_breed_list_random_image': f'/api/breed/{breed}/images/random'
     }
     return endpoints
+
+
+def get_brew_endpoints(brewery_type=None, brewery_state=None):
+    endpoints = {
+        'single_brewery': '/v1/breweries/{obdb-id}',
+        'all_breweries': '/v1/breweries',
+        'by_type': f'/v1/breweries?by_type={brewery_type}',
+        'random_brewery': '/v1/breweries/random',
+        'by_state': f'/v1/breweries?by_state={brewery_state}'
+    }
+    return endpoints

@@ -1,7 +1,6 @@
 import requests
 
 from endpoints import get_dog_endpoints
-from lessonApi.conftest import dog_base_url
 
 
 def get_expected_breeds():
