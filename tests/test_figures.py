@@ -6,7 +6,6 @@ from secondOOP.src.Square import Square
 from secondOOP.src.Triangle import Triangle
 from secondOOP.src.Circle import Circle
 
-
 """Creating figures block"""
 rectangle = Rectangle(5, 10)
 square = Square(10)
@@ -15,7 +14,6 @@ circle = Circle(10)
 
 """Creating non-geometric objects"""
 rook = Figure(name='rook')
-
 
 """
 Rectangle tests

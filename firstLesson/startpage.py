@@ -13,5 +13,3 @@ def test_return_data():
 
 test_print_string()
 test_return_data()
-
-
