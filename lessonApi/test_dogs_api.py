@@ -8,6 +8,7 @@ from breed_info import get_expected_breeds, get_all_breeds
 def check_success_statuscode(response):
     assert response.status_code in range(200, 299)
 
+
 def test_breed_list(dog_base_url):
     endpoints = get_dog_endpoints()
     r = requests.get(f'{dog_base_url}{endpoints["all_breed_list"]}')
