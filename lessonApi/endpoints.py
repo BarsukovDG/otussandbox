@@ -13,9 +13,9 @@ def get_dog_endpoints(breed='hound'):
     return endpoints
 
 
-def get_brew_endpoints(brewery_type=None, brewery_state=None):
+def get_brew_endpoints(brewery_type=None, brewery_state=None, obdb_id='b54b16e1-ac3b-4bff-a11f-f7ae9ddc27e0'):
     endpoints = {
-        'single_brewery': '/v1/breweries/{obdb-id}',
+        'single_brewery': f'/v1/breweries/{obdb_id}',
         'all_breweries': '/v1/breweries',
         'by_type': f'/v1/breweries?by_type={brewery_type}',
         'random_brewery': '/v1/breweries/random',
