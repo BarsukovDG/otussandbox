@@ -43,8 +43,9 @@ def test_get_brewery_random(brew_base_url):
     for item in resp1_body:
         for k, v in item.items():
             assert k in brewery_keys
-            """uncomment assertion below in case of every value required"""
-            # assert v, f'there is no value for key "{k}" in brewery {item["name"]}'
+            print(f'{k} ___AND___ {v}') #TODO del this print after fixing raiseException
+            with pytest.raises(Exception), f'there is no value for key "{k}" in brewery {item["name"]}':
+                assert v
 
 
 def test_get_brewery_by_state(brew_base_url):
