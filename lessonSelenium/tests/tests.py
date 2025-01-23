@@ -1,10 +1,22 @@
-import time
+from lessonSelenium.pageObjects.locators import OpenCartLocators, YandexZenLocators
 
 
 def test_first(driver):
-    base_page = driver.get('https://yandex.ru')
-    shorts_locator = '/html/body/div[8]/div[2]/div[2]/div[1]/aside/ul/a[6]'
-    shorts_btn = driver.find_element(by='xpath', value=shorts_locator)
+    driver.get('https://yandex.ru')
+    shorts_btn = driver.find_element(*YandexZenLocators.shorts_locator)
     shorts_btn.click()
     assert 'Дзен' in driver.title
-    time.sleep(5)
+
+
+def test_login_opencart(driver):
+    driver.get('https://demo.opencart.com/admin/')
+    username_input = driver.find_element(*OpenCartLocators.username_input)
+    password_input = driver.find_element(*OpenCartLocators.password_input)
+    login_btn = driver.find_element(*OpenCartLocators.login_btn)
+    username_input.clear()
+    username_input.send_keys('demo')
+    password_input.clear()
+    password_input.send_keys('demo')
+    login_btn.click()
+    driver.implicitly_wait(2)
+    assert driver.find_element(*OpenCartLocators.profile_icon)
