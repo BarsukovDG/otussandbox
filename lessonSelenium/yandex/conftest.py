@@ -9,6 +9,7 @@ DRIVERS = os.path.expanduser('~/webDrivers/')
 
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')
+    parser.addoption('--url', default='https://yandex.ru/')
 
 
 @pytest.fixture(scope='module')
@@ -24,6 +25,9 @@ def driver(request):
         driver = webdriver.Safari
     else:
         raise AttributeError(f'Browser param :: there is no {browser} driver')
+    base_url = request.config.getoption('--url')
+    if base_url:
+        driver.get(base_url)
     driver.maximize_window()
     driver.implicitly_wait(3)
     failed_before = request.session.testsfailed

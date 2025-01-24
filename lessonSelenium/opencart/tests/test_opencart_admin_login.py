@@ -1,11 +1,4 @@
-from lessonSelenium.pageObjects.locators import OpenCartLocators, YandexZenLocators
-
-
-def test_first(driver):
-    driver.get('https://yandex.ru')
-    shorts_btn = driver.find_element(*YandexZenLocators.shorts_locator)
-    shorts_btn.click()
-    assert 'Дзен' in driver.title
+from lessonSelenium.opencart.pageObjects.locators import OpenCartLocators
 
 
 def test_login_opencart(driver):
