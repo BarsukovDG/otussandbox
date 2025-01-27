@@ -29,7 +29,7 @@ def driver(request):
     if base_url:
         driver.get(base_url)
     driver.maximize_window()
-    driver.implicitly_wait(3)
+    driver.implicitly_wait(1)
     failed_before = request.session.testsfailed
 
     def teardown():
