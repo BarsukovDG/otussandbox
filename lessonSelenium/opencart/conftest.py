@@ -10,6 +10,7 @@ DRIVERS = os.path.expanduser('~/webDrivers/')
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')
     parser.addoption('--url', default='https://demo.opencart.com/')
+    # parser.addoption('--fullscreen', action='store_true')
 
 
 @pytest.fixture(scope='module')
@@ -28,7 +29,11 @@ def driver(request):
     base_url = request.config.getoption('--url')
     if base_url:
         driver.get(base_url)
-    driver.maximize_window()
+    # fullscreen = request.config.getoption('--fullscreen')
+    # if fullscreen:
+    #     driver.maximize_window()
+    # else:
+    #     pass
     driver.implicitly_wait(1)
     failed_before = request.session.testsfailed
 

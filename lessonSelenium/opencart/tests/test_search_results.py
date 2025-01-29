@@ -1,11 +1,10 @@
-from lessonSelenium.actions.actions_v1 import wait_for_element_is_visible
 from lessonSelenium.opencart.pageObjects.locators import OpenCartLocators as ocl
 from lessonSelenium.actions import actions_v1
 
 
 def test_login_opencart(driver):
     actions_v1.wait_for_element_is_visible(driver, element=ocl.search_bar)
-    search_field = wait_for_element_is_visible(driver, element=ocl.search_field)
+    search_field = actions_v1.wait_for_element_is_visible(driver, element=ocl.search_field)
     search_field.clear()
     search_field.send_keys('Macbook')
     search_btn = actions_v1.wait_for_element_is_clickable(driver, element=ocl.search_btn)

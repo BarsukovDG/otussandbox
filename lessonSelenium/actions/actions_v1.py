@@ -43,3 +43,14 @@ def wait_for_element_invisible(driver, element, timeout=3):
     locator = (element['locator_type'], element['locator'])
     el = WebDriverWait(driver, timeout=timeout).until(EC.invisibility_of_element(locator),
                                                       message=f'Элемент {element} не скрылся с экрана')
+
+
+def wait(driver, timeout=1):
+    WebDriverWait(driver, timeout=timeout)
+
+
+def get_elements(driver, element, timeout=3):
+    locator = (element['locator_type'], element['locator'])
+    WebDriverWait(driver, timeout=timeout).until(EC.visibility_of_element_located(locator))
+    el_list = driver.find_elements(*locator)
+    return el_list

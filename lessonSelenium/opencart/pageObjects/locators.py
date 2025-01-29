@@ -22,3 +22,11 @@ class OpenCartLocators:
                  'locator': 'search=macbook'}
     load_ring = {'locator_type': By.CSS_SELECTOR,
                  'locator': 'div.lds-ring'}
+    menu_bar = {'locator_type': By.ID,
+                 'locator': 'menu'}
+    menu_header = {'locator_type': By.ID,
+                 'locator': 'category'}
+    menu_burger = {'locator_type': By.CSS_SELECTOR,
+                 'locator': 'button.navbar-toggler'}
+    category_link = {'locator_type': By.CSS_SELECTOR,
+                 'locator': 'a.nav-link'} #a.nav-link.dropdown-toggle
