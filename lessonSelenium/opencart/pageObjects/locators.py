@@ -30,3 +30,7 @@ class OpenCartLocators:
                  'locator': 'button.navbar-toggler'}
     category_link = {'locator_type': By.CSS_SELECTOR,
                  'locator': 'a.nav-link'} #a.nav-link.dropdown-toggle
+    add_to_cart_btn = {'locator_type': By.XPATH,
+                 'locator': '/html/body/main/div[2]/div/div/div[2]/div[2]/div/div[2]/form/div/button[1]'}
+    add_to_cart_alert = {'locator_type': By.CSS_SELECTOR,
+                'locator': 'div.alert.alert-success.alert-dismissible'}
